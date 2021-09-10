@@ -38,7 +38,7 @@
 				<select
 					class="form-select w-50 h-25 mx-5"
 					aria-label="Default select example"
-					name="deliveryPerson"
+					name="deliveryStatus"
 				>
 					<option <%- order.orderState=='Task Created' && "selected" %> value="Task Created <%= order._id %>">Task Created</option>
 					<option <%- order.orderState=='Reached Store' && "selected" %> value="Reached Store <%= order._id %>">Reached Store</option>

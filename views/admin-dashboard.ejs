@@ -35,11 +35,11 @@
 			<% }) %>
 			<div class="col-2 me-auto text-center"><%= order.orderState %></div>
 			<div class="col-6">
-				<form action="/delivery-dashboard" class="d-flex" method="POST">
+				<form action="/dashboard" class="d-flex" method="POST">
 					<select
 						class="form-select w-50 h-25 mx-5"
 						aria-label="Default select example"
-						name="deliveryStatus"
+						name="deliveryPerson"
 					>
 						<option selected disabled>Select delivery person</option>
 						<% deliveryPerson.forEach(person => { %>

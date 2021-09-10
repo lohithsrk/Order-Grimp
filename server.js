@@ -16,7 +16,7 @@ const Products = require('./models/products.model');
 const app = express();
 
 mongoose
-	.connect('mongodb://localhost:27017/order-grimp')
+	.connect(process.env.DB_URL || 'mongodb://localhost:27017/order-grimp')
 	.then(() => {
 		console.log('DATABASE CONNECTED');
 	})

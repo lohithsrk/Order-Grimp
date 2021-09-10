@@ -14,7 +14,7 @@ router
 		console.log(assignedOrders);
 		res.render('deliveryman-dashboard', { assignedOrders });
 	})
-	.post(async (req, res) => {
+	.post(isLoggedIn, isDeliveryMan, async (req, res) => {
 		const status = req.body.deliveryStatus.split(' ')[0];
 		const orderId = req.body.deliveryStatus.split(' ')[1];
 		const orderStatusUpdate = await Orders.findOneAndUpdate(orderId, {

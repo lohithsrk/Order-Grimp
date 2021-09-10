@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const Products = require('./models/products.model');
 
 mongoose
-	.connect('mongodb://localhost:27017/order-grimp')
+	.connect( process.env.DB_URL || 'mongodb://localhost:27017/order-grimp')
 	.then(() => {
 		console.log('DATABASE CONNECTED');
 	})
