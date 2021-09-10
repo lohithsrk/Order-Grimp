@@ -27,10 +27,11 @@
 					alt="Image not available..."
 				/>
 			</div>
-			<div class="col-3">
-				<%= order.deliveredBy.phoneNumber ? order.deliveredBy._id : 'Not
-				Assigned'%>
-			</div>
+			<% if (order.deliveredBy) { %>
+			<div class="col-3"><%= order.deliveredBy._id %></div>
+			<% } else { %>
+			<div class="col-3">Not Assigned</div>
+			<% } %>
 			<div class="col-2"><%= order.orderState %></div>
 			<div class="col-3"><%= order.orderedBy._id %></div>
 			<div class="col-2"><%= product.addresses[index] %></div>
