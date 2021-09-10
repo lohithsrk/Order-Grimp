@@ -1,9 +1,16 @@
+if (process.env.NODE_ENV !== 'production') require('dotenv').config();
 const mongoose = require('mongoose');
 
 const Products = require('./models/products.model');
 
+let db_url = '';
+if (process.env.NODE_ENV !== 'production') {
+	db_url = 'mongodb://localhost:27017/order-grimp';
+} else {
+	db_url = process.env.DB_URL;
+}
 mongoose
-	.connect( process.env.DB_URL || 'mongodb://localhost:27017/order-grimp')
+	.connect(db_url)
 	.then(() => {
 		console.log('DATABASE CONNECTED');
 	})
@@ -35,7 +42,7 @@ const products = [
 ];
 
 const base = async () => {
-	Product && (await Products.deleteMany({}));
+	Products && (await Products.deleteMany({}));
 	products.forEach(async (product) => {
 		const data = await new Products(product);
 		await data.save();
