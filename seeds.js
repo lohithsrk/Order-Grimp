@@ -35,7 +35,7 @@ const products = [
 ];
 
 const base = async () => {
-	await Products.deleteMany({});
+	Product && (await Products.deleteMany({}));
 	products.forEach(async (product) => {
 		const data = await new Products(product);
 		await data.save();

@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const random = require('random');
 
 const { isLoggedIn } = require('../middleware');
 
@@ -48,7 +47,6 @@ router.post('/checkout', async (req, res) => {
 		products: user.carts,
 		quantity: user.carts.length,
 		orderedBy: user._id,
-		deliveredBy: users[random.int(0, users.length - 1)]._id
 	});
 	orders.save();
 	res.redirect('/orders');

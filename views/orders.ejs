@@ -27,7 +27,9 @@
 					alt="Image not available..."
 				/>
 			</div>
-			<div class="col-3"><%= order.deliveredBy._id %></div>
+			<div class="col-3">
+				<%= order.deliveredBy ? order.deliveredBy._id : 'Not Assigned'%>
+			</div>
 			<div class="col-2"><%= order.orderState %></div>
 			<div class="col-3"><%= order.orderedBy._id %></div>
 			<div class="col-2"><%= product.addresses[index] %></div>
