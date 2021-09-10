@@ -40,12 +40,12 @@
 					aria-label="Default select example"
 					name="deliveryStatus"
 				>
-					<option <%- order.orderState=='Task Created' && "selected" %> value="Task Created <%= order._id %>">Task Created</option>
-					<option <%- order.orderState=='Reached Store' && "selected" %> value="Reached Store <%= order._id %>">Reached Store</option>
-					<option <%- order.orderState=='Items Picked' && "selected" %> value="Items Picked <%= order._id %>">Items Picked</option>
-					<option <%- order.orderState=='Enroute' && "selected" %> value="Enroute <%= order._id %>">Enroute</option>
-					<option <%- order.orderState=='Delivered' && "selected" %> value="Delivered <%= order._id %>">Delivered</option>
-					<option <%- order.orderState=='Canceled' && "selected" %> value="Canceled <%= order._id %>">Canceled</option>
+					<option <%- order.orderState=='Task Created' && "selected" %> value="Task Created#<%= order._id %>">Task Created</option>
+					<option <%- order.orderState=='Reached Store' && "selected" %> value="Reached Store#<%= order._id %>">Reached Store</option>
+					<option <%- order.orderState=='Items Picked' && "selected" %> value="Items Picked#<%= order._id %>">Items Picked</option>
+					<option <%- order.orderState=='Enroute' && "selected" %> value="Enroute#<%= order._id %>">Enroute</option>
+					<option <%- order.orderState=='Delivered' && "selected" %> value="Delivered#<%= order._id %>">Delivered</option>
+					<option <%- order.orderState=='Canceled' && "selected" %> value="Canceled#<%= order._id %>">Canceled</option>
 				</select>
 				<button class="btn btn-info w-25 text-white">
 					<svg

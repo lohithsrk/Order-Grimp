@@ -15,10 +15,10 @@ router
 		res.render('deliveryman-dashboard', { assignedOrders });
 	})
 	.post(isLoggedIn, isDeliveryMan, async (req, res) => {
-		const status = req.body.deliveryStatus.split(' ')[0];
-		const orderId = req.body.deliveryStatus.split(' ')[1];
+		const status = req.body.deliveryStatus.split('#')[0];
+		const orderId = req.body.deliveryStatus.split('#')[1];
 		const orderStatusUpdate = await Orders.findOneAndUpdate(orderId, {
-			$set: { orderStatus: status }
+			$set: { orderState: status }
 		});
 		req.flash('success', 'Delivery status successfull updated.');
 		res.redirect('/delivery-dashboard');
