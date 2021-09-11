@@ -46,7 +46,6 @@ const base = async () => {
 	products.forEach(async (product) => {
 		const data = await new Products(product);
 		await data.save();
-		console.log(data);
 	});
 };
 

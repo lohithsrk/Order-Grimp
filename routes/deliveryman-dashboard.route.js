@@ -11,7 +11,6 @@ router
 		const assignedOrders = await Orders.find({ deliveredBy: req.user._id })
 			.populate('products')
 			.populate('orderedBy');
-		console.log(assignedOrders);
 		res.render('deliveryman-dashboard', { assignedOrders });
 	})
 	.post(isLoggedIn, isDeliveryMan, async (req, res) => {

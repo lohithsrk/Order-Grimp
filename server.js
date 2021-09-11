@@ -9,6 +9,7 @@ const mongoose = require('mongoose');
 const ejsMate = require('ejs-mate');
 const session = require('express-session');
 const flash = require('connect-flash');
+const morgan = require('morgan');
 
 const User = require('./models/user.model');
 const Products = require('./models/products.model');
@@ -36,6 +37,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
 app.use(flash());
+app.use(morgan('dev'));
 
 const sessionConfig = {
 	secret: 'thisshouldbeabettersecret!',

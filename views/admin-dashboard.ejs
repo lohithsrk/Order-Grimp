@@ -17,7 +17,6 @@
 		<li>Orders</li>
 		<li>Order Status</li>
 		<li>Delivery person</li>
-		<li>Assign</li>
 	</ul>
 	<% if (allOrders.length) { %> <% allOrders.forEach((order,index) => { %>
 	<div class="border">
@@ -42,6 +41,7 @@
 						class="form-select w-50 h-25 mx-5"
 						aria-label="Default select example"
 						name="deliveryPerson"
+						onchange="this.form.submit()"
 					>
 						<option selected disabled>Select delivery person</option>
 						<% deliveryPerson.forEach(person => { %>
@@ -50,22 +50,6 @@
 						</option>
 						<% }) %>
 					</select>
-					<button class="btn btn-info w-25 text-white">
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							class="w-25"
-							fill="none"
-							viewBox="0 0 24 24"
-							stroke="currentColor"
-						>
-							<path
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								stroke-width="2"
-								d="M5 13l4 4L19 7"
-							/>
-						</svg>
-					</button>
 				</form>
 			</div>
 		</div>
