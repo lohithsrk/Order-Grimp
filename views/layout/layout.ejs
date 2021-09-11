@@ -12,7 +12,7 @@
 			crossorigin="anonymous"
 		/>
 	</head>
-	<body style="background-color: #F8F9FA;">
+	<body style="background-color: #f8f9fa">
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 			<div class="container">
 				<a class="navbar-brand" href="/">Order-Grimp</a>
@@ -30,7 +30,9 @@
 				<div class="collapse navbar-collapse" id="navbarNav">
 					<ul class="navbar-nav ms-auto d-flex justify-content-around">
 						<li class="nav-item mx-3">
-							<a class="nav-link text-white-50" aria-current="page" href="/">Home</a>
+							<a class="nav-link text-white-50" aria-current="page" href="/"
+								>Home</a
+							>
 						</li>
 						<% if (currentUser && currentUser.role=='admin') { %>
 						<li class="nav-item mx-3">
@@ -38,7 +40,9 @@
 						</li>
 						<% } else if(currentUser && currentUser.role=='delivery-man') {%>
 						<li class="nav-item mx-3">
-							<a href="/delivery-dashboard" class="nav-link text-white-50">Dashboard</a>
+							<a href="/delivery-dashboard" class="nav-link text-white-50"
+								>Dashboard</a
+							>
 						</li>
 						<% }%> <% if(!currentUser) { %>
 						<li class="nav-item mx-3">
@@ -49,10 +53,10 @@
 						</li>
 						<% } else { %>
 						<li class="nav-item mx-3">
-							<a class="nav-link text-white-50" href="/logout">Logout</a>
+							<a class="nav-link text-white-50" href="/orders">Orders</a>
 						</li>
 						<li class="nav-item mx-3">
-							<a class="nav-link text-white-50" href="/orders">Orders</a>
+							<a class="nav-link text-white-50" href="/logout">Logout</a>
 						</li>
 						<% } %>
 						<li class="nav-item mx-3">
