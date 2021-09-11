@@ -18,13 +18,14 @@ router
 		const deliveryPerson = await User.find({ role: 'delivery-man' });
 		res.render('admin-dashboard', { allOrders, deliveryPerson });
 	})
-	.post(isLoggedIn, isAdmin,async (req, res) => {
+	.post(isLoggedIn, isAdmin, async (req, res) => {
 		const deliveryPersonId = req.body.deliveryPerson.split(' ')[0];
 
 		const orderId = req.body.deliveryPerson.split(' ')[1];
 		const order = await Orders.findByIdAndUpdate(orderId, {
 			$set: { deliveredBy: deliveryPersonId }
 		});
+		console.log(order);
 		req.flash('success', 'Order assigned successfully.');
 		res.redirect('/dashboard');
 	});

@@ -4,7 +4,7 @@
 	action="/login"
 	class="container col-6 top-50 start-50 position-absolute translate-middle"
 	method="POST"
-	>
+>
 	<div class="form-group mb-4">
 		<label class="text-uppercase form-label" for="username">username</label
 		><input
@@ -12,15 +12,22 @@
 			id="uername"
 			class="form-control w-100"
 			name="username"
+			autofocus
 		/>
 	</div>
 	<div class="form-group mb-4">
-		<label class="text-uppercase form-label" for="phoneNumeber" class="form-label">Phone Number</label
+		<label
+			class="text-uppercase form-label"
+			for="phoneNumeber"
+			class="form-label"
+			>Phone Number</label
 		><input
 			type="number"
 			id="phoneNumber"
 			class="form-control w-100"
 			name="phoneNumber"
+			minlength="10"
+			manlength="10"
 		/>
 	</div>
 	<div class="form-group mb-4">
@@ -32,7 +39,16 @@
 			name="password"
 		/>
 	</div>
-	<button class="btn btn-success translate-middle-x position-absolute start-50 mt-4 w-25">
+	<button
+		class="
+			btn btn-success
+			translate-middle-x
+			position-absolute
+			start-50
+			mt-4
+			w-25
+		"
+	>
 		LOGIN
 	</button>
 </form>
