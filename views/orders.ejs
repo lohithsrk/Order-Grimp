@@ -1,5 +1,5 @@
 <%- layout('layout/layout') %>
-<h1 class="text-center">Orders</h1>
+<h1 class="text-center text-decoration-underline text-uppercase m-5">Orders</h1>
 <div class="container">
 	<ul
 		class="
@@ -28,18 +28,18 @@
 				/>
 			</div>
 			<% if (order.deliveredBy) { %>
-			<div class="col-3"><%= order.deliveredBy._id %></div>
+			<div class="col-3  d-flex align-self-center justify-content-center"><%= order.deliveredBy._id %></div>
 			<% } else { %>
-			<div class="col-3">Not Assigned</div>
+			<div class="col-3  d-flex align-self-center justify-content-center">Not Assigned</div>
 			<% } %>
-			<div class="col-2"><%= order.orderState %></div>
-			<div class="col-3"><%= order.orderedBy._id %></div>
-			<div class="col-2"><%= product.addresses[index] %></div>
+			<div class="col-2  d-flex align-self-center justify-content-center"><%= order.orderState %></div>
+			<div class="col-3  d-flex align-self-center justify-content-center"><%= order.orderedBy._id %></div>
+			<div class="col-2  d-flex align-self-center justify-content-center"><%= product.addresses[index] %></div>
 		</div>
 		<% }) %>
 		<a
 			href="/"
-			class="text-center text-decoration-none btn btn-success text-white my-3"
+			class="text-center text-decoration-none btn btn-success text-white my-4 text-uppercase"
 			>Go to Home</a
 		>
 	</div>

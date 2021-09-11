@@ -22,7 +22,7 @@ if (process.env.NODE_ENV !== 'production') {
 	db_url = process.env.DB_URL;
 }
 mongoose
-	.connect(db_url)
+	.connect(process.env.DB_URL)
 	.then(() => {
 		console.log('DATABASE CONNECTED');
 	})

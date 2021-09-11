@@ -1,6 +1,8 @@
 <%- layout('layout/layout') %>
 
-<h1>Admin dashboard</h1>
+<h1 class="text-center text-decoration-underline text-uppercase my-5">
+	Admin dashboard
+</h1>
 <div class="container">
 	<ul
 		class="
@@ -17,7 +19,7 @@
 		<li>Delivery person</li>
 		<li>Assign</li>
 	</ul>
-	<% allOrders.forEach((order,index) => { %>
+	<% if (allOrders.length) { %> <% allOrders.forEach((order,index) => { %>
 	<div class="border">
 		<h6 class="text-center text-uppercase border-bottom">
 			Order <%= index+1 %>
@@ -68,5 +70,7 @@
 			</div>
 		</div>
 	</div>
-	<% }) %>
+	<% }) %> <% } else { %>
+	<h5 class="text-center text-black-50 m-5 text-uppercase">No orders found</h5>
+	<% } %>
 </div>
