@@ -1,7 +1,12 @@
 <%- layout('layout/layout') %>
-<form action="/register" method="POST">
-	<div class="input-group">
-		<label for="userName" class="form-label">Username</label>
+<h1 class="text-center mt-5 text-decoration-underline">REGISTER</h1>
+<form
+	action="/register"
+	class="container col-6 position-absolute translate-middle top-50 start-50"
+	method="POST"
+>
+	<div class="form-group mb-4">
+		<label for="userName" class="form-label text-uppercase">Username</label>
 		<input
 			id="userName"
 			type="text"
@@ -10,8 +15,10 @@
 			required
 		/>
 	</div>
-	<div class="input-group">
-		<label for="phoneNumber" class="form-label">Phone Number</label>
+	<div class="form-group mb-4">
+		<label for="phoneNumber" class="form-label text-uppercase"
+			>Phone Number</label
+		>
 		<input
 			id="phoneNumber"
 			type="number"
@@ -20,8 +27,8 @@
 			required
 		/>
 	</div>
-	<div class="input-group">
-		<label for="password" class="form-label">Password</label>
+	<div class="form-group mb-4">
+		<label for="password" class="form-label text-uppercase">Password</label>
 		<input
 			type="password"
 			class="form-control"
@@ -30,5 +37,9 @@
 			required
 		/>
 	</div>
-	<button>Continue</button>
+	<button
+		class="translate-middle-x position-absolute mt-4 w-25 start-50 btn btn-info text-white"
+	>
+		REGISTER
+	</button>
 </form>

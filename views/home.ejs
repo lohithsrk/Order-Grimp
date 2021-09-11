@@ -1,13 +1,16 @@
 <%- layout('layout/layout') %>
-<h1>Order Grimp</h1>
-<div class="d-flex">
+<h1 class="text-center text-success text-decoration-underline">Order Grimp</h1>
+<div class="d-flex align-items-center justify-content-center">
 	<% products.forEach(product => { %>
-	<div class="card" style="width: 18rem">
-		<img
-			src="<%= product.image%>"
-			class="card-img-top"
-			alt="Image not available..."
-		/>
+	<div class="card w-25 m-4 h-100">
+		<div class="positon-relative h-25">
+			<img
+				src="<%= product.image%>"
+				class="card-img-top h-100"
+				style="object-fit: cover"
+				alt="Image not available..."
+			/>
+		</div>
 		<div class="card-body">
 			<h5 class="card-title"><%= product.name %></h5>
 			<p class="card-text"><%= product.description %></p>
